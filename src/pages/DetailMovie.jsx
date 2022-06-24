@@ -28,7 +28,7 @@ const DetailMovie = () => {
                 <Box w='30%'  boxSize='sm' m='1em' >
                     <Image className='box' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} maxH='96' mx='auto'/>
                 </Box>
-                <Box className='box' w='70%' textAlign='left' backgroundColor='rgba(82, 11, 22, 0.644)' px='2em'>
+                <Box className='box' w='70%' textAlign='left' backgroundColor='rgba(82, 11, 22, 0.644)' px='2em' py='1em'>
                     <HStack><Heading  fontSize='45px'>{movie.title} <Tag fontFamily='body'>{movie.release_date.slice(0, -6)}</Tag></Heading></HStack>
                     <Text fontSize='2xl' m='4'>{movie.overview}</Text>
                     

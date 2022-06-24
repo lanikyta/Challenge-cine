@@ -74,13 +74,14 @@ const Search = () => {
       <> 
         <Box  m='10' display='block' >
           <Heading fontSize='6xl' m='2'>Movie night?</Heading>
-          <Text fontSize='2xl'>Find the most popular movies.. or search your favorite!</Text>
+          <Text fontSize='2xl'>Find the most popular movies.. or search for your favorite!</Text>
         </Box>
         <Flex direction='column' align='center' justify='center' wrap='wrap' w='50%' mx='auto'>
           <InputGroup w='60%' mx='3' my='10' borderColor='red' > 
-            <Input focusBorderColor='pink.400' placeholder='Búsqueda' _placeholder={{ color: 'inherit' }} value={inputValue} onChange={handleInput} />
+            <Input focusBorderColor='pink.400' placeholder='Search' _placeholder={{ color: 'inherit' }} value={inputValue} onChange={handleInput} />
             <InputRightElement children={<IconButton variant='ghost' pointerEvents='none' aria-label='Search button' icon={<SearchIcon/>}/>}/>
           </InputGroup>
+          <Text>Or Filter by rating!</Text>
           {ScaleFadeRating()}
         </Flex>
         {render()}
