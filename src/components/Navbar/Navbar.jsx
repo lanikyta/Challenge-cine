@@ -1,19 +1,22 @@
-import { Box, Heading, Text, Spacer, Flex, Link, Button,  useColorMode } from '@chakra-ui/react';
+import './Navbar.css'
+import { Heading, Spacer, Flex, Link, Button, Image, LinkBox, LinkOverlay } from '@chakra-ui/react';
+import logotmdb from '../../assets/tmdb.svg'
 const Navbar = () => {
-    const { colorMode, toggleColorMode } = useColorMode()
-    
+
     return(
-        <Flex direction='column'  alignContent='center'>
+        <Flex direction='column'  alignContent='center' bgGradient='linear(to-r, red.900, pink.900)' className='navbar'>
             <Flex  direction='row' align='center' >
-                <Heading as='button' onClick={toggleColorMode} p='4' m='1' color='red.700'>Movies</Heading>
+                <LinkBox>
+                    <LinkOverlay href='https://www.themoviedb.org/' isExternal><Image  ml='3' src={logotmdb} w='30px'/></LinkOverlay>
+                    
+                </LinkBox>
+                <Heading p='2' m='1' color='pink.700'>Movies</Heading>
+                <Link fontSize='2xl' href='/' color='pink'>Popular!</Link>
+                
                 <Spacer></Spacer>
                 <Link color='white' p='4'>Login</Link>
                 <Button color='gray.700' bgColor='whiteAlpha.500' m='3'>Sign Up</Button>
             </Flex>
-            <Box  m='10' display='block' >
-                <Heading fontSize='6xl' m='2'>Movie night?</Heading>
-                <Text fontSize='2xl'>Find the most popular movies.. or search your favorite!</Text>
-            </Box>
         </Flex>
     )
 }

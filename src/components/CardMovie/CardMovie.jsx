@@ -1,14 +1,16 @@
 
-import { Heading, Image,  Text, Link, VStack } from "@chakra-ui/react"
-import { DetailMovie } from "../DetailMovie/DetailMovie"
+import { Heading, Image,  Text, Link, VStack, IconButton, HStack } from "@chakra-ui/react"
+import { StarIcon } from '@chakra-ui/icons'
 const CardMovie = ({item}) => {
     const { title, vote_average, poster_path, id } = item
+    let stars = [ 2, 4, 6, 8, 10]
     return(
         <>
-        <VStack h='320' w='60' m='1' >
-            <Link href={`/movie/${id}`} as='button' onClick={DetailMovie}><Image src={`https://image.tmdb.org/t/p/original${poster_path}`}  alt={title} h='60'/></Link>
-            <Heading as='h1' size='2'>{title}</Heading>
-            <Text size='1'>Rating</Text>
+        <VStack h='320' w='60' m='5' justify='space-between'>
+            <Link href={`/details/${id}`} ><Image src={`https://image.tmdb.org/t/p/original${poster_path}`}  alt={title} h='60'/></Link>
+            <VStack justify='space-between'><Text as='h1' size='2'>{title}</Text>
+            <HStack >{stars.map(elem=><StarIcon key={elem} color={elem <= vote_average+2 ? 'yellow' : 'gray'}/>)}
+            </HStack></VStack>   
         </VStack>
         </>
     )

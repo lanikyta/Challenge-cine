@@ -1,13 +1,15 @@
 .App {
   text-align: center;
+  background-image: url('./assets/bg1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Macondo', cursive;
+  color: rgb(157, 24, 29);
+  min-height: 100vh;
+}
+.box{
+  box-shadow: 0px 0px 10px 4px rgb(195, 197, 162);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
