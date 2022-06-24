@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Image, ListItem, Stack, Tag, Text, UnorderedList, VStack } from "@chakra-ui/react"
+import { Box, Heading, HStack, Image, ListItem, Spinner, Stack, Tag, Text, UnorderedList, VStack } from "@chakra-ui/react"
 import { useState } from "react"
 import { useEffect } from "react"
 import { useParams } from "react-router"
@@ -20,7 +20,7 @@ const DetailMovie = () => {
       
    
       if(isLoading){
-        return <Text>load</Text>
+        return <Spinner color='red.500' mt='3'/>
       }
     return(
         <VStack backgroundImage={`url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`} backgroundSize='cover' backgroundAttachment='fixed' backgroundPosition='center' minH='92vh' color='gray.400'>
