@@ -10,7 +10,7 @@ const PopularMovies = ({rating, page }) => {
   
   useEffect(() => {
     const getDatos= async ()=>{
-    const response = await fetch(`${URL_API}/discover/movie?api_key=${API_KEY}&languaje=en-ES&sort_by=popularity.desc${rating !== 0 ? `&vote_average.gte=${rating-2}&vote_average.lte=${rating}&vote_count.gte=500` : ''}&page=${page}`)
+    const response = await fetch(`${URL_API}/discover/movie?api_key=${API_KEY}&languaje=en-ES&sort_by=popularity.desc${rating !== 0 ? `&vote_average.gte=${rating-2}&vote_average.lte=${rating}&vote_count.gte=30` : ''}&page=${page}`)
     const moviesData = await response.json();
     setMovies(moviesData.results)
   }  
