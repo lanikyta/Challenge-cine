@@ -9,6 +9,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 npm i
 ```
 
+## Tambien puedes ver el proyecto ya buildeado aquí: [Challenge Cine](https://challenge-cine-react.netlify.app/)
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
