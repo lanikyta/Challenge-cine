@@ -12,7 +12,7 @@ const Search = () => {
     const stars = [0, 2, 4, 6, 8, 10]
     const [rating, setRating] =useState(0)
     const [page, setPage] = useState(1)
-    
+    const [ isOpen, setIsOpen ] = useState(false)
     useEffect(() => {
       if(inputValue !== ''){
         const getSearch= async ()=>{
@@ -31,10 +31,19 @@ const Search = () => {
       setRating(num)
       setPage(1)
     }
-    
-    const [ isOpen, setIsOpen ] = useState(false)
-    function ScaleFadeRating() {
-  
+    const handlePage =(op)=>{
+      if(op==='+'){
+        setPage(page+1)
+        window.scrollTo({top: 0})
+      } else {
+        setPage(page-1)
+      }
+    }
+    const handleInput=(e)=>{
+        setInputValue(e.target.value)
+        setPage(1)
+    }
+    const ScaleFadeRating=()=> {
       return (
         <>
           <Button colorScheme='teal' onClick={()=>{setIsOpen(!isOpen)
@@ -47,18 +56,6 @@ const Search = () => {
         </>
       )
     }
-    const handlePage =(op)=>{
-      if(op==='+'){
-        setPage(page+1)
-        window.scrollTo({top: 0})
-      } else {
-        setPage(page-1)
-      }
-    }
-    const handleInput=(e)=>{
-        setInputValue(e.target.value)
-        setPage(1)
-      }
     const render=()=>{
       if(inputValue !== ''){ 
           return <>
@@ -70,6 +67,7 @@ const Search = () => {
             </Box>
           </>} else return <PopularMovies rating={rating} page={page}/> 
     }
+
     return(
       <> 
         <Box  m='10' display='block' >
