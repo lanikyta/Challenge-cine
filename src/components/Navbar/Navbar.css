@@ -2,3 +2,13 @@
     box-shadow: 0px 10px 20px rgb(195, 197, 162);
     position: relative;
 }
+.hidden{
+    display: none;
+    
+}
+
+@media (max-width: 776px) {
+    .hidden{
+        display: inline;
+    }
+}

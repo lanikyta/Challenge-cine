@@ -1,4 +1,5 @@
-import { Box, Heading, HStack, Image, ListItem, Spinner, Stack, Tag, Text, UnorderedList, VStack } from "@chakra-ui/react"
+import { Box, Heading, HStack, IconButton, Image, Link, ListItem, Spinner, Stack, Tag, Text, UnorderedList, VStack } from "@chakra-ui/react"
+import { ArrowLeftIcon } from '@chakra-ui/icons'
 import { useState } from "react"
 import { useEffect } from "react"
 import { useParams } from "react-router"
@@ -36,7 +37,9 @@ const DetailMovie = () => {
                     <UnorderedList m='2em'>
                         {movie.genres.map(elem=><ListItem fontSize='2vh' key={elem.id}>{elem.name}</ListItem>)}
                     </UnorderedList>
+                    <Link href='/' ml='3'><IconButton size='xs'  colorScheme='gray' color='red.400' icon={<ArrowLeftIcon/>}/></Link>
                 </Box>
+               
             </Stack>
         </VStack>
     )

@@ -46,10 +46,10 @@ const Search = () => {
     const ScaleFadeRating=()=> {
       return (
         <>
-          <Button colorScheme='teal' onClick={()=>{setIsOpen(!isOpen)
+          <Button colorScheme='teal' my='1' onClick={()=>{setIsOpen(!isOpen)
             setInputValue('')}}>Rating Filter</Button>
           <ScaleFade initialScale={0.9} in={isOpen}>
-            <HStack p='2' bgColor='gray.400' w='fit-content' borderRadius='10px' h='2em'>
+            <HStack p='1' bgColor='gray.400' borderRadius='10px' h='3%'>
               {stars.map(number=><Rating key={number} number={number} handleClickRating={handleClickRating} rating={rating}/>)}
             </HStack>
           </ScaleFade>
@@ -70,12 +70,12 @@ const Search = () => {
 
     return(
       <> 
-        <Box  m='10' display='block' >
+        <Box  my='10' display='block' >
           <Heading fontSize='6xl' m='2'>Movie night?</Heading>
           <Text fontSize='2xl'>Find the most popular movies.. or search for your favorite!</Text>
         </Box>
-        <Flex direction='column' align='center' justify='center' wrap='wrap' w='50%' mx='auto'>
-          <InputGroup w='60%' mx='3' my='10' borderColor='red' > 
+        <Flex w='60%' direction='column' align='center' justify='center' wrap='wrap' mx='auto'>
+          <InputGroup w={['95%', null, null, '50%', '50%']}  my='10' borderColor='red' > 
             <Input focusBorderColor='pink.400' placeholder='Search' _placeholder={{ color: 'inherit' }} value={inputValue} onChange={handleInput} />
             <InputRightElement children={<IconButton variant='ghost' pointerEvents='none' aria-label='Search button' icon={<SearchIcon/>}/>}/>
           </InputGroup>
